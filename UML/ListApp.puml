@@ -1,0 +1,59 @@
+@startuml
+!define DARKBLUE
+!includeurl https://raw.githubusercontent.com/Drakemor/RedDress-PlantUML/master/style.puml
+'https://plantuml.com/class-diagram
+
+package javaFX{
+class Application
+}
+
+class ListApp {
+    main(String[] args)
+    start(Stage primaryStage)
+}
+
+class ListAppController {
+    - listViewOfList: ListView
+
+    + search(ActionEvent actionEvent)
+    + dueDateButtonClicked(ActionEvent actionEvent)
+    + nameButtonClicked(ActionEvent actionEvent)
+    + incompletedButtonClicked(ActionEvent actionEvent)
+    + completedButtonClicked(ActionEvent actionEvent)
+    + createNewListButtonClicked(ActionEvent actionEvent)
+    + deleteListButtonClicked(ActionEvent actionEvent)
+    + openListButtonClicked(ActionEvent actionEvent)
+}
+class ListController {
+    - listViewOfItems: ListView
+
+    + search(ActionEvent actionEvent)
+    + dueDateButtonClicked(ActionEvent actionEvent)
+    + nameButtonClicked(ActionEvent actionEvent)
+    + incompletedButtonClicked(ActionEvent actionEvent)
+    + completedButtonClicked(ActionEvent actionEvent)
+    + nameOfListChanged(ActionEvent actionEvent)
+    + createNewItemButtonClicked(ActionEvent actionEvent)
+    + deleteItemButtonClicked(ActionEvent actionEvent)
+    + dueDatePicked(ActionEvent actionEvent)
+    + openItemButtonClicked(ActionEvent actionEvent)
+    + backButtonClicked(ActionEvent actionEvent)
+}
+class ItemsController {
+    + search(ActionEvent actionEvent)
+    + dueDateButtonClicked(ActionEvent actionEvent)
+    + nameButtonClicked(ActionEvent actionEvent)
+    + incompletedButtonClicked(ActionEvent actionEvent)
+    + completedButtonClicked(ActionEvent actionEvent)
+    + nameOfListChanged(ActionEvent actionEvent)
+    + dueDatePicked(ActionEvent actionEvent)
+    + descriptionEdited(KeyEvent keyEvent)
+    + backButtonClicked(ActionEvent actionEvent)
+}
+
+Application <|-- ListApp
+ListApp -- ListAppController
+ListApp -- ListController
+ListApp -- ItemsController
+
+@enduml

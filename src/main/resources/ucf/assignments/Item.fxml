@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ucf.assignments.ItemController">
+   <children>
+      <AnchorPane layoutX="20.0" layoutY="20.0" prefHeight="60.0" prefWidth="600.0" style="-fx-background-color: #141B41;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <TextField fx:id="listSearchBar" layoutX="14.0" layoutY="18.0" onAction="#search" promptText="Search for Item..." AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="18.0" />
+            <MenuButton layoutX="487.0" layoutY="18.0" mnemonicParsing="false" style="-fx-background-color: #306BAC;" text="Filter" textFill="WHITE" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="18.0">
+               <items>
+                  <MenuItem fx:id="dueDateButton" mnemonicParsing="false" onAction="#dueDateButtonClicked" text="Due Date" />
+                  <MenuItem fx:id="nameButton" mnemonicParsing="false" onAction="#nameButtonClicked" text="Name" />
+                  <MenuItem fx:id="incompletedButton" mnemonicParsing="false" onAction="#incompletedButtonClicked" text="Incompleted" />
+                  <MenuItem fx:id="completedButton" mnemonicParsing="false" onAction="#completedButtonClicked" text="Completed" />
+               </items>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </MenuButton>
+            <TextField fx:id="listName" layoutX="176.0" layoutY="8.0" onAction="#nameOfListChanged" promptText="Name Your New Item" style="-fx-background-color: #141B41; -fx-text-fill: #ffffff;" AnchorPane.leftAnchor="176.0" AnchorPane.topAnchor="8.0">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </TextField>
+            <Button fx:id="backButton" layoutX="473.0" layoutY="19.0" mnemonicParsing="false" onAction="#backButtonClicked" style="-fx-background-color: #306BAC;" text="Back" textFill="WHITE" AnchorPane.rightAnchor="80.0" AnchorPane.topAnchor="18.0">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children>
+      </AnchorPane>
+      <DatePicker fx:id="dueDatePicker" layoutX="420.0" layoutY="77.0" onAction="#dueDatePicked" promptText="Pick Due Date" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="75.0" />
+      <TextArea fx:id="itemDescription" layoutY="100.0" onKeyTyped="#descriptionEdited" prefHeight="293.0" prefWidth="600.0" promptText="Description..." wrapText="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="107.0" />
+   </children>
+</AnchorPane>
